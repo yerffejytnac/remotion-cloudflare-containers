@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.958.0",
     "@cloudflare/containers": "^0.0.31",
     "@remotion/cli": "4.0.394",
     "@remotion/renderer": "4.0.394",

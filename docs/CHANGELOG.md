@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced `--remote` flag workflow with remote bindings (`remote = true` on R2)
 - Videos now stored at bucket root instead of `/renders/` prefix
 - Response now includes full public URL for rendered videos
+- Improved Dockerfile layer caching by separating dependency and source copying
+- Combined `remotion browser ensure` and `remotion bundle` into single layer
+- Sorted apt packages alphabetically for maintainability
+- Added `--no-install-recommends` to apt-get for smaller image size
 
 ### Added
 
@@ -23,6 +27,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `@remotion/renderer` explicitly added to dependencies
 - Documentation in `docs/OVERVIEW.md`
 - This changelog
+- `.dockerignore` to reduce Docker build context size
+- OCI labels to Dockerfile for image metadata
+- `NODE_ENV=production` environment variable in container
+- `HEALTHCHECK` instruction for container liveness monitoring
+- Non-root user (`bun`) for container runtime security
+- `curl` package for healthcheck support
 
 ### Fixed
 

@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build outputs (we build inside the container)
+build/
+out/
+dist/
+
+# Git
+.git/
+.gitignore
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Documentation
+docs/
+*.md
+LICENSE
+
+# Development/local config
+.env
+.env.*
+!.env.example
+wrangler.toml
+worker-configuration.d.ts
+
+# Linting and formatting
+eslint.config.mjs
+.prettierrc*
+.eslintrc*
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__/
+coverage/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Logs
+*.log
+npm-debug.log*

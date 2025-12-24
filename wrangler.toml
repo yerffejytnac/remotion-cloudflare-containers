@@ -1,0 +1,38 @@
+name = "remotion-renderer-service"
+compatibility_date = "2025-07-03"
+compatibility_flags = ["nodejs_compat"]
+main = "src/container.ts"
+
+# Required for containers to work
+account_id = "c749b6fd5ee6a6d00ae1f2f19630345b"
+
+[vars]
+R2_BUCKET_NAME = "remotion-renders"
+CLOUDFLARE_ACCOUNT_ID = "c749b6fd5ee6a6d00ae1f2f19630345b"
+
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "remotion-renders"
+preview_bucket_name = "remotion-renders"
+remote = true  # Connect to real R2 during local dev
+
+# Development settings - containers only work locally
+[dev]
+enable_containers = true
+
+[[containers]]
+class_name = "RemotionContainer"
+image = "./Dockerfile"
+max_instances = 10
+instance_type = "standard-1"
+
+[[durable_objects.bindings]]
+name = "REMOTION_CONTAINER"
+class_name = "RemotionContainer"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RemotionContainer"]
+
+[observability]
+enabled = true

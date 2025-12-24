@@ -1,0 +1,40 @@
+{
+  "name": "cloudflare-demo",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cloudflare/containers": "^0.0.31",
+    "@remotion/cli": "4.0.394",
+    "@remotion/renderer": "4.0.394",
+    "@remotion/tailwind-v4": "4.0.394",
+    "@remotion/zod-types": "4.0.394",
+    "express": "^5.1.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.394",
+    "tailwindcss": "4.1.18",
+    "zod": "3.22.3"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.394",
+    "@types/express": "^5.0.3",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.308",
+    "eslint": "9.39.2",
+    "prettier": "3.7.4",
+    "typescript": "5.9.3",
+    "wrangler": "^4.23.0"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}

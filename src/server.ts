@@ -45,10 +45,16 @@ app.post("/render", async (req, res) => {
       return;
     }
 
+    // For WebGL/MapLibre: use angle for GPU-accelerated rendering
+    const chromiumOptions = {
+      gl: "angle" as const,
+    };
+
     const composition = await selectComposition({
       serveUrl: "./build",
       id: compositionId,
       inputProps,
+      chromiumOptions,
     });
 
     console.log(`[${renderId}] Starting render...`);
@@ -58,6 +64,10 @@ app.post("/render", async (req, res) => {
       codec: "h264",
       outputLocation,
       serveUrl: "./build",
+      chromiumOptions,
+      // JPEG is faster than PNG for non-transparent content
+      imageFormat: "jpeg",
+      jpegQuality: 90,
     });
     console.log(`[${renderId}] Render finished.`);
 

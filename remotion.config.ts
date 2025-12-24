@@ -9,3 +9,7 @@ import { enableTailwind } from '@remotion/tailwind-v4';
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.overrideWebpackConfig(enableTailwind);
+
+// Required for WebGL/MapLibre rendering - prevents flickering
+// Use "angle" locally with GPU, "swangle" for Docker/CI without GPU
+Config.setChromiumOpenGlRenderer("angle");

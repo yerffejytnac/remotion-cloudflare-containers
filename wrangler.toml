@@ -29,7 +29,7 @@ enable_containers = true
 class_name = "RemotionContainer"
 image = "./Dockerfile"
 max_instances = 10
-instance_type = "standard-1"
+instance_type = "standard-3"
 
 [[durable_objects.bindings]]
 name = "REMOTION_CONTAINER"
